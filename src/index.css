@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  #root { width: 100%; }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: linear-gradient(135deg, #fb923c 0%, #f472b6 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rule { border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+
+  .glass-thin {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.4); }
+
+/* Typography scale */
+.display { font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1.0; }
+.headline { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
+.label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
